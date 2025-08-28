@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.P_botao{
+  font-size: 52px;
+  color: #333;
+  font-weight: bold;
+  margin-right: 100px;
+}
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1400px;
+  height: 100vh;
+}
+
+.left-menu {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.left-menu button {
+  width: 350px;
+  padding: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ffe60099, #d8c20099);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.left-menu button:hover {
+  background: linear-gradient(135deg, #d2bd0199, #ffec3f99);
+  transform: scale(1.07);
+}
+
+.right-content {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-right: 50px;
+}
+
+.logo {
+  width: 400px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.right-content h1 {
+  font-size: 52px;
+  color: #333;
+  font-weight: bold;
+  margin-right: 100px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left-menu {
+    position: static;
+    transform: none;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .left-menu button {
+    width: 280px;
+    font-size: 24px;
+  }
+
+  .right-content {
+    position: static;
+    transform: none;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  .right-content h1 {
+    font-size: 42px;
+    margin-right: 0;
+  }
+}

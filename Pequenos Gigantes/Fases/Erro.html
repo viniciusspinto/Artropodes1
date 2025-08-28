@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Erro - Pequenos Gigantes</title>
+  <style>
+    body {
+      background-color: #fafafa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .error-container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #d32f2f;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .burro-container {
+      position: relative;
+      width: 320px;
+      height: 420px;
+      margin: 0 auto;
+    }
+
+    /* Agora o vídeo está na frente */
+    video {
+      position: absolute;
+      top: 100px;
+      left: 40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2; /* na frente */
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .burro-img {
+      width: 80%;
+      height: auto;
+      position: relative;
+      z-index: 1; /* atrás do vídeo */
+    }
+
+    button {
+      background-color: #ff5252;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;  /* Ajustado para descer um pouco mais */
+      z-index: 3;  /* Garantir que o botão fique na frente */
+    }
+
+    button:hover {
+      background-color: #e53935;
+    }
+
+    .back-button-container {
+      margin-top: 40px;
+      z-index: 3;  /* Garantir que o botão fique na frente */
+      position: relative;  /* Garantir que o botão esteja em frente */
+    }
+
+    .back-button {
+      background-color: #ffca28; /* Cor amarela */
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #f39c12; /* Cor mais escura */
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>😅 Opa, errou feio! Burrão</h1>
+    <p>Olha quem apareceu no espelho... 🐴</p>
+
+    <div class="burro-container">
+      <!-- Vídeo da câmera na frente -->
+      <video id="video" autoplay playsinline muted></video>
+
+      <!-- Imagem do burro -->
+      <img src="/imgs/Burro" alt="Burro" class="burro-img" />
+    </div>
+
+    <!-- Botão de Voltar -->
+    <div class="back-button-container">
+      <button onclick="window.location.href='/index.html'" class="back-button">Voltar ao Início</button>
+    </div>
+
+  </div>
+
+  <script>
+    async function ativarCamera() {
+      try {
+        const video = document.getElementById('video');
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+      } catch (err) {
+        console.error('Erro ao acessar a câmera:', err);
+        alert('Não foi possível acessar a câmera. Verifique as permissões.');
+      }
+    }
+
+    window.onload = ativarCamera;
+  </script>
+</body>
+</html>

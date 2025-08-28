@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Erro - Pequenos Gigantes</title>
+  <style>
+    body {
+      background-color: #fafafa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .error-container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #d32f2f;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .burro-container {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+    .burro-img {
+      width: 100%;
+      height: auto;
+      z-index: 1;
+      position: relative;
+    }
+
+    video {
+      position: absolute;
+      top: 85px;  /* Ajuste fino */
+      left: 90px; /* Ajuste fino */
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    button {
+      background-color: #ff5252;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>😅 Eita!</h1>
+    <p>Você errou... olha só quem apareceu! 🐴</p>
+
+    <div class="burro-container">
+      <!-- Câmera do usuário -->
+      <video id="video" autoplay playsinline muted></video>
+
+      <!-- Imagem do burro com "rosto em recorte" -->
+      <img src="imgs/burro.png" alt="Burro" class="burro-img" />
+    </div>
+
+    <br />
+    <button onclick="window.location.href='../index.html'">Tentar de novo</button>
+  </div>
+
+  <script>
+    async function ativarCamera() {
+      try {
+        const video = document.getElementById('video');
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+      } catch (err) {
+        console.error('Erro ao acessar a câmera:', err);
+        alert('Não foi possível acessar a câmera. Verifique as permissões.');
+      }
+    }
+
+    // Ativa a câmera automaticamente ao carregar a página
+    window.onload = ativarCamera;
+  </script>
+</body>
+</html>

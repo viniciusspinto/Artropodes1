@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pequenos Gigantes - Fim de Jogo</title>
+  <link rel="stylesheet" href="../Styles/style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #ffca28, #ffca28);
+      color: rgb(0, 0, 0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+    .message {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-out;
+    }
+    .submessage {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      opacity: 0.8;
+      animation: fadeIn 2s ease-out;
+    }
+    .button_fim {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+    .button_fim:hover {
+      background-color: #f39c12;
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="message">FIM DE JOGO</div>
+  <div class="submessage">Obrigado por jogar Pequenos Gigantes!</div>
+  <button onclick="window.location.href='/index.html'" class="button_fim">Voltar ao Início</button>
+</body>
+</html>

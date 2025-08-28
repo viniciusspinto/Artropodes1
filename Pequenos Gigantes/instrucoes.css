@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh;
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinha todo o conteúdo ao centro */
+  align-items: center; /* Alinha todo o conteúdo ao centro */
+  text-align: center;
+}
+
+.instructions-container {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 30px; /* Espaço entre o topo e as instruções */
+}
+
+.instructions-title {
+  background-color: #dcdcdc; /* Fundo cinza para o título */
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px; /* Menos margem entre o título e o texto */
+}
+
+.instructions-text {
+  background-color: #f5f5f5; /* Fundo cinza claro para o texto */
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 90%;
+  margin: 0 auto; /* Centraliza o texto */
+}
+
+.instructions-text p {
+  font-size: 16px; /* Diminui o tamanho do texto para compactar */
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0; /* Remove a margem extra do topo */
+  text-align: justify; /* Alinha o texto de forma justificada */
+}
+
+/* Seção da logo e título do jogo */
+.game-info {
+  margin-top: 40px; /* Espaço entre as instruções e a logo */
+}
+
+.logo {
+  width: 300px; /* Tamanho ajustado da logo */
+  height: auto;
+  margin-bottom: 20px; /* Espaço entre a logo e o título */
+}
+
+.game-title {
+  font-size: 32px; /* Tamanho do título ajustado */
+  color: #333;
+  font-weight: bold;
+}
